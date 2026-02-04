@@ -1,5 +1,11 @@
 <main>
   <app-title title="Upload Your Image!"></app-title>
+  <upload [selectedImages]="selectedImages"></upload>
+  @for (file of selectedImages(); track $index) {
+    <div>
+      <p>{{ file.filename }}</p>
+    </div>
+  }
 </main>
 
 <router-outlet />
